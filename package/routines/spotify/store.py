@@ -1,6 +1,6 @@
 import os
 
-from ..common.config import SPOTIFY_SEARCH_OUTPUT_DIR
+from ...common.config import SPOTIFY_SEARCH_OUTPUT_DIR
 
 def storeIds(resultIds: list, fileName: str):
     # Create results folder if it does not exists

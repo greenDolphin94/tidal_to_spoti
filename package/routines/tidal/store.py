@@ -3,8 +3,8 @@ import tidalapi
 import os
 import json
 
-from ..common.logger import logErr, logInfo
-from ..common.config import TIDAL_OUTPUT_DIR, TIDAL_FAVORITE_TRACKS_FILE, TIDAL_FAVORITE_ARTISTS_FILE, TIDAL_FAVORITE_ALBUMS_FILE, TIDAL_PLAYLIST_FILE
+from ...common.logger import logErr, logInfo
+from ...common.config import TIDAL_OUTPUT_DIR, TIDAL_FAVORITE_TRACKS_FILE, TIDAL_FAVORITE_ARTISTS_FILE, TIDAL_FAVORITE_ALBUMS_FILE, TIDAL_PLAYLIST_FILE
 
 kName: str = 'name'
 kArtist: str = 'artist'
@@ -62,6 +62,6 @@ def store_playlists(collection: list[tidalapi.Playlist]) -> None:
             kName:e.full_name
         })
     for pl in collection:
-        _write_to_file([f">>> {pl.name}\n"], lambda x:x, TIDAL_PLAYLIST_FILE, 'a')
+        _write_to_file([f">>> {pl.name}"], lambda x:x, TIDAL_PLAYLIST_FILE, 'a')
         _write_to_file(pl.tracks(), playlist_entry_builder, TIDAL_PLAYLIST_FILE, 'a')
         _write_to_file(['\n'], lambda x:x, TIDAL_PLAYLIST_FILE, 'a')

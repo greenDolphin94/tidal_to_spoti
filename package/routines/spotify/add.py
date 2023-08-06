@@ -3,8 +3,8 @@ import spotipy as sp
 import os.path as path
 import math
 
-from ..common.config import SPOTIFY_SEARCH_OUTPUT_DIR, SPOTIFY_TRACKS_IDS_FILE, SPOTIFY_ARTISTS_IDS_FILE, SPOTIFY_ALBUMS_IDS_FILE
-from ..common.logger import logInfo
+from ...common.config import SPOTIFY_SEARCH_OUTPUT_DIR, SPOTIFY_TRACKS_IDS_FILE, SPOTIFY_ARTISTS_IDS_FILE, SPOTIFY_ALBUMS_IDS_FILE
+from ...common.logger import logInfo
 
 def _read_from_file(inputFile: str) -> list[str]:
     if not path.exists(inputFile):

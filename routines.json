@@ -1,0 +1,9 @@
+{
+    "tidal": [
+        "StoreAllPreferences"
+    ],
+    "spotify": [
+        "SearchIds",
+        "AddIdsToFavorites"
+    ]
+}

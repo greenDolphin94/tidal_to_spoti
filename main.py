@@ -1,10 +1,22 @@
-import package.tidal_routines.rout_save_preferences as tr
-import package.spotify_routines.rout_search_spotify as sr_sea
-import package.spotify_routines.rout_add_preferences as sr_add
-
+from package.routines.routines_config import init_routines
+from package.common.logger import logErr, logInfo
+from package.routines.routine import Routine, RoutineFailure
 
 if __name__ == '__main__':
-    # tr.run()
-    # sr_sea.run() 
-    sr_add.run()
+    # Read config
+    try:
+        routines: list[Routine] = init_routines()
+        for routine in routines:
+            logInfo(f'Running {routine.id} ...')
+            if not routine.run():
+                raise RoutineFailure(f'Routine {routine.id} failed to complete successfully')
+        print('End with success')
+    except RoutineFailure as err:
+        logErr(err)
+        print(err)
+        print('Check output/log for information')
+    except Exception as err:
+        logErr(err)
+        print(f'Unknown error {type(err)}\n{err}')
+        print('Check output/log for information')
 
