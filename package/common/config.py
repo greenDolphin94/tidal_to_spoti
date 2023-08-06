@@ -6,7 +6,7 @@ import json
 root = os.getcwd()
 
 # Tidal
-TIDAL_CREDENTIAL_FILE = path.join(root, 'package', 'tidal_routines', 'tidal_secrets.txt')
+TIDAL_AUTH_TOKENS_FILE_PATH = path.join(root, 'package', 'tidal_routines', 'tidal_secrets.txt')
 TIDAL_OUTPUT_DIR = path.join(root, 'output', 'tidal')
 TIDAL_FAVORITE_TRACKS_FILE = 'favoriteTracks.txt'
 TIDAL_FAVORITE_ARTISTS_FILE = 'favoriteArtists.txt'

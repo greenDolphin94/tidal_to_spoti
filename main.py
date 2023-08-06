@@ -8,6 +8,3 @@ if __name__ == '__main__':
     # sr_sea.run() 
     sr_add.run()
 
-
-else:
-    print(__name__)
